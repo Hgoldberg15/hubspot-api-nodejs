@@ -254,7 +254,7 @@ Despite 'sorts' is an array, however, currently, only one sort parameter is supp
 In JS 'sort' it's possible to set as:
 
 1. < propertyName > - returned results will be sorted by provided property name in 'ASCENDING' order. e.g: 'hs_object_id'
-2. < stringified sort object > - returned results will be sorted by provided property name and sort direction. e.g: JSON.stringify({ propertyName: 'hs_object_id', direction: 'ASCENDING' }) or JSON.stringify({ propertyName: 'hs_object_id', direction: 'DESCENDING' })
+2. < sort object > - returned results will be sorted by provided property name and sort direction. e.g: { propertyName: 'hs_object_id', direction: 'ASCENDING' } or { propertyName: 'hs_object_id', direction: 'DESCENDING' }
 3. < sort object > - returned results will be sorted by provided property name and sort direction. e.g: { propertyName: 'hs_object_id', direction: 'ASCENDING' } or { propertyName: 'hs_object_id', direction: 'DESCENDING' }
 
 In TS works only the first two options.
@@ -264,7 +264,7 @@ In TS works only the first two options.
 ```javascript
 const filter = { propertyName: 'createdate', operator: 'GTE', value: Date.now() - 30 * 60000 }
 const filterGroup = { filters: [filter] }
-const sort = JSON.stringify({ propertyName: 'createdate', direction: 'DESCENDING'})
+const sort = { propertyName: 'createdate', direction: 'DESCENDING'}
 const query = 'test'
 const properties = ['createdate', 'firstname', 'lastname']
 const limit = 100
